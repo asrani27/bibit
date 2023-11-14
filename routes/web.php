@@ -75,12 +75,12 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
     Route::post('superadmin/pengajuan/serahterima', [SerahTerimaController::class, 'tgl_serah_terima']);
 
     Route::get('superadmin/laporan', [LaporanController::class, 'index']);
-    Route::get('superadmin/laporan/user', [LaporanController::class, 'kpp']);
-    Route::get('superadmin/laporan/bibit', [LaporanController::class, 'kpa']);
-    Route::get('superadmin/laporan/stok', [LaporanController::class, 'kpa']);
-    Route::get('superadmin/laporan/pengajuan', [LaporanController::class, 'kpa']);
-    Route::get('superadmin/laporan/validasi', [LaporanController::class, 'kpa']);
-    Route::get('superadmin/laporan/serahterima', [LaporanController::class, 'kpa']);
+    Route::get('superadmin/laporan/user', [LaporanController::class, 'user']);
+    Route::get('superadmin/laporan/bibit', [LaporanController::class, 'bibit']);
+    Route::get('superadmin/laporan/stok', [LaporanController::class, 'stok']);
+    Route::get('superadmin/laporan/pengajuan', [LaporanController::class, 'pengajuan']);
+    Route::get('superadmin/laporan/validasi', [LaporanController::class, 'validasi']);
+    Route::get('superadmin/laporan/serahterima', [LaporanController::class, 'serahterima']);
 });
 
 Route::group(['middleware' => ['auth', 'role:pemohon']], function () {

@@ -10,11 +10,13 @@
     <table border=0 width="100%">
         <tr>
             <td width="15%" style="text-align: right">
-                <img src="/logo/kejari.png" width="60%">
+                <img src="/logo/kandangan.png" width="60%">
             </td>
             <td style="text-align: center">
-                <b>KEJAKSAAN NEGERI HULU SUNGAI UTARA<br/>
+                <b>PENGAJUAN BANTUAN BIBIT PERKEBUNAN PADA DINAS PERTANIAN<br/>
+                    KABUPATEN HULU SUNGAI SELATAN<br/>
                 KALIMANTAN SELATAN<br/></b>
+                Alamat: Jl. Singakarsa No.38, Kandangan Bar., Kec. Kandangan, Kabupaten Hulu Sungai Selatan, Kalimantan Selatan 71213
                 
 
             </td>
@@ -23,22 +25,16 @@
             </td>
         </tr>
         <tr>
-            <td colspan=3 style="text-align:center"><br/><strong><u>LAPORAN TINDAK KEKERASAN PADA PEREMPUAN</u></strong></td>
+            <td colspan=3 style="text-align:center"><br/><strong><u>LAPORAN STOK BIBIT</u></strong></td>
         </tr>
     </table>
     <br/>
     <table border=1 cellspacing="0" cellpadding="3" width="100%">
         <tr>
             <th>No</th>
-            <th>Tanggal</th>
-            <th>Tersangka</th>
-            <th>Korban</th>
-            <th>Penyidik</th>
-            <th>Kejadian</th>
-            <th>Pasal</th>
-            <th>Estimasi Penahanan</th>
-            <th>JPU 1</th>
-            <th>JPU 2</th>
+            <th>Nama Bibit</th>
+            <th>Satuan</th>
+            <th>Stok</th>
         </tr>
         @php
             $no =1;
@@ -46,15 +42,9 @@
         @foreach ($data as $key => $item)
             <tr>
                 <td style="text-align: center">{{$no++}}</td>
-                <td style="text-align: center">{{\Carbon\Carbon::parse($item->tanggal)->format('d M Y')}}</td>
-                <td style="text-align: center">{{$item->tersangka == null ? '' : $item->tersangka->nama}}</td>
-                <td style="text-align: center">{{$item->korban == null ? '' : $item->korban->nama}}</td>
-                <td style="text-align: center">{{$item->penyidik == null ? '' : $item->penyidik->nama}}</td>
-                <td style="text-align: center">{{$item->kejadian}}</td>
-                <td style="text-align: center">{{$item->pasal}}</td>
-                <td style="text-align: center">{{$item->penahanan}}</td>
-                <td style="text-align: center">{{$item->nama_jpu1}}</td>
-                <td style="text-align: center">{{$item->nama_jpu2}}</td>
+                <td style="text-align: center">{{$item->nama}}</td>
+                <td style="text-align: center">{{$item->satuan}}</td>
+                <td style="text-align: center">{{$item->stok}}</td>
                 
             </tr>
         @endforeach
@@ -64,8 +54,8 @@
         <tr>
             <td width="60%"></td>
             <td>
-                Amuntai, {{\Carbon\Carbon::today()->translatedFormat('d F Y')}}, <br/>
-                Kejaksaan Negeri Hulu Sungai Utara<br/>
+                Kandangan, {{\Carbon\Carbon::today()->translatedFormat('d F Y')}}, <br/>
+                Dinas Pertanian<br/>
                 Kepala,
                 <br/><br/><br/><br/><br/>
 
