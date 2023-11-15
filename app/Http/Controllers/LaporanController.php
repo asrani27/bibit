@@ -45,7 +45,7 @@ class LaporanController extends Controller
     }
     public function serahterima()
     {
-        $data = Pengajuan::get();
+        $data = Pengajuan::where('tgl_serah_terima', '!=', null)->get();
         return view('admin.laporan.serahterima', compact('data'));
     }
 }
