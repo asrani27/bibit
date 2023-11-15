@@ -40,7 +40,7 @@ class LaporanController extends Controller
 
     public function validasi()
     {
-        $data = Pengajuan::get();
+        $data = Pengajuan::where('status', 2)->get();
         return view('admin.laporan.validasi', compact('data'));
     }
     public function serahterima()
