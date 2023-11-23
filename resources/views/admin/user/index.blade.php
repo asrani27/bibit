@@ -20,7 +20,7 @@
                 <tbody>
                 <tr>
                   <th class="text-center">No</th>
-                  <th>Nama</th>
+                  <th>Nama Kelompok Tani</th>
                   <th>Username</th>
                   <th>Role</th>
                   <th>Aksi</th>

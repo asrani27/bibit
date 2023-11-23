@@ -18,7 +18,7 @@
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">Nama Kelompok Tani</label>
                   <div class="col-sm-10">
-                    <input type="text" name="nama" class="form-control" required>
+                    <input type="text" name="nama" class="form-control" readonly value="{{Auth::user()->name}}">
                   </div>
                 </div>
                 <div class="form-group">
