@@ -42,7 +42,7 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body table-responsive">
-          <form method="post" action="/superadmin/laporan/periode">
+          <form method="post" action="/superadmin/laporan/periode" target="_blank">
             @csrf
           Mulai
           <input type="date" name="mulai">
