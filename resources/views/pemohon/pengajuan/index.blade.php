@@ -32,7 +32,7 @@
                 <tr>
                     <td class="text-center">{{$pengajuan->firstItem() + $key}}</td>
                     <td>{{$item->tanggal}}</td>
-                    <td>{{$item->nama}}</td>
+                    <td>{{$item->nama_kelompok}}</td>
                     <td>{{$item->alamat}}</td>
                     <td>{{$item->email}}</td>
                     <td>

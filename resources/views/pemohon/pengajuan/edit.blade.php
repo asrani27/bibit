@@ -18,6 +18,12 @@
             <div class="form-group">
               <label for="inputEmail3" class="col-sm-2 control-label">Nama Kelompok Tani</label>
               <div class="col-sm-10">
+                <input type="text" name="nama_kelompok" class="form-control" readonly value="{{$data->nama_kelompok}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">Nama Ketua / Pemimpin Kelompok Tani</label>
+              <div class="col-sm-10">
                 <input type="text" name="nama" class="form-control" readonly value="{{$data->nama}}">
               </div>
             </div>

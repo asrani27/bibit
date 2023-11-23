@@ -25,7 +25,7 @@
                   <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">Nama Ketua / Nama Pemimpin Kelompok</label>
                     <div class="col-sm-10">
-                      <input type="text" name="name" class="form-control" value="{{$data->nama_kelompok}}" required>
+                      <input type="text" name="name" class="form-control" value="{{$data->name}}" required>
                     </div>
                   </div>
                   <div class="form-group">

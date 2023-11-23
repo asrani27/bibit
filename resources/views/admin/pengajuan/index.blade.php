@@ -22,6 +22,7 @@
                   <th class="text-center">No</th>
                   <th>Tanggal Pengajuan</th>
                   <th>Nama Kelompok Tani</th>
+                  <th>Nama Akun</th>
                   <th>ALamat</th>
                   <th>Email</th>
                   <th>Bibit Yang Diajukan</th>
@@ -32,6 +33,7 @@
                 <tr>
                     <td class="text-center">{{$pengajuan->firstItem() + $key}}</td>
                     <td>{{\Carbon\Carbon::parse($item->tanggal)->format('d-m-Y')}}</td>
+                    <td>{{$item->nama_kelompok}}</td>
                     <td>{{$item->nama}}</td>
                     <td>{{$item->alamat}}</td>
                     <td>{{$item->email}}</td>

@@ -21,6 +21,7 @@
                 <tr>
                   <th class="text-center">No</th>
                   <th>Nama Kelompok Tani</th>
+                  <th>Nama Ketua / Pemimpin Kelompok Tani</th>
                   <th>Username</th>
                   <th>Role</th>
                   <th>Aksi</th>
@@ -28,6 +29,7 @@
                 @foreach ($data as $key => $item)
                 <tr>
                     <td class="text-center">{{$data->firstItem() + $key}}</td>
+                    <td>{{$item->nama_kelompok}}</td>
                     <td>{{$item->name}}</td>
                     <td>{{$item->username}}</td>
                     <td>{{$item->roles->first()->name}}</td>
