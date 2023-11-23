@@ -18,6 +18,12 @@
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">Nama Kelompok Tani</label>
                   <div class="col-sm-10">
+                    <input type="text" name="nama_kelompok" class="form-control" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Nama Ketua / Nama Pemimpin Kelompok</label>
+                  <div class="col-sm-10">
                     <input type="text" name="name" class="form-control" required>
                   </div>
                 </div>
