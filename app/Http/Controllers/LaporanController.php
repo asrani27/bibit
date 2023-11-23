@@ -43,6 +43,24 @@ class LaporanController extends Controller
         $data = Pengajuan::where('status', 2)->get();
         return view('admin.laporan.validasi', compact('data'));
     }
+    public function periode(Request $req)
+    {
+        $from = $req->mulai;
+        $to = $req->sampai;
+
+        if ($req->jenis == 'pengajuan') {
+            $data = Pengajuan::whereBetween('tanggal', [$from, $to])->get();
+            return view('admin.laporan.pengajuan', compact('data'));
+        }
+        if ($req->jenis == 'validasi') {
+            $data = Pengajuan::whereBetween('tanggal', [$from, $to])->where('status', 2)->get();
+            return view('admin.laporan.validasi', compact('data'));
+        }
+        if ($req->jenis == 'serahterima') {
+            $data = Pengajuan::whereBetween('tanggal', [$from, $to])->where('tgl_serah_terima', '!=', null)->get();
+            return view('admin.laporan.serahterima', compact('data'));
+        }
+    }
     public function serahterima()
     {
         $data = Pengajuan::where('tgl_serah_terima', '!=', null)->get();
