@@ -42,6 +42,7 @@
             <th>Email</th>
             <th>Bibit Yang Diserahkan</th>
             <th>Tanggal Diserahkan</th>
+            <th>Pengirim dan Penerima</th>
             
           </tr>
         @php
@@ -73,6 +74,10 @@
                 {{\Carbon\Carbon::parse($item->tgl_serah_terima)->format('d-m-Y')}} 
                 <a href="#" class="btn btn-xs btn-success serahterima" data-id="{{$item->id}}"><i class="fa fa-calendar"></i></a>
               @endif
+            </td>
+            <td>
+                Pengirim : {{$item->pengirim}}<br/>
+                Penerima : {{$item->penerima}}
             </td>
              
              
