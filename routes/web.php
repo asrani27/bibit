@@ -73,6 +73,7 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
     Route::get('superadmin/validasi', [ValidasiController::class, 'index']);
     Route::get('superadmin/serahterima', [SerahTerimaController::class, 'index']);
     Route::post('superadmin/pengajuan/serahterima', [SerahTerimaController::class, 'tgl_serah_terima']);
+    Route::post('superadmin/pengajuan/penerima', [SerahTerimaController::class, 'penerima']);
 
     Route::get('superadmin/laporan', [LaporanController::class, 'index']);
     Route::post('superadmin/laporan/periode', [LaporanController::class, 'periode']);

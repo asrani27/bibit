@@ -28,6 +28,7 @@
                   <th>Bibit Yang Diserahkan</th>
                   <th>Validasi</th>
                   <th>Tanggal Diserahkan</th>
+                  <th>Pengirim & Penerima</th>
                   
                 </tr>
                 @foreach ($data as $key => $item)
@@ -66,6 +67,16 @@
                         <a href="#" class="btn btn-xs btn-success serahterima" data-id="{{$item->id}}"><i class="fa fa-calendar"></i></a>
                       @endif
                     </td>
+                    <td>
+                      @if ($item->pengirim == null)
+                      <a href="#" class="btn btn-xs btn-success penerima" data-id="{{$item->id}}"><i class="fa fa-edit"></i></a>
+                      @else
+                      Pengirim : {{$item->pengirim}}<br/>
+                      Penerima : {{$item->penerima}}<br/>
+                      <a href="#" class="btn btn-xs btn-success penerimaedit" data-pengirim="{{$item->pengirim}}"  data-penerima="{{$item->penerima}}" data-id="{{$item->id}}"><i class="fa fa-edit"></i></a>
+                          
+                      @endif
+                    </td>
                     
                     
                 </tr>
@@ -97,9 +108,37 @@
 
               <div class="modal-body">
                   <div class="form-group">
-                  <div class="form-group">
                     <input type="date" class="form-control" name="tgl_serah_terima" required>
                       <input type="hidden" class="form-control" id="pengajuan_id" name="pengajuan_id" readonly>
+                  </div>
+              </div>
+
+              <div class="modal-footer">
+                  <button type="submit" class="btn btn-success btn-block" name="button"  value="setuju"><i class="fa fa-send"></i>Kirim</button>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="modal-penerima">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <form method="post" action="/superadmin/pengajuan/penerima" enctype="multipart/form-data">
+              @csrf
+              
+              <div class="modal-header bg-success">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Pengirim Dan Penerima</h4>
+              </div>
+
+              <div class="modal-body">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="pengirim" name="pengirim" placeholder="Nama pengirim" required><br/>
+                    <input type="text" class="form-control" id="penerima" name="penerima" placeholder="Nama penerima" required>
+                    <input type="hidden" class="form-control" id="id_pengajuan" name="id_pengajuan" readonly>
                   </div>
               </div>
 
@@ -117,6 +156,16 @@
   $(document).on('click', '.serahterima', function() {
     $('#pengajuan_id').val($(this).data('id'));
      $("#modal-tambah").modal();
+  });
+  $(document).on('click', '.penerima', function() {
+    $('#id_pengajuan').val($(this).data('id'));
+     $("#modal-penerima").modal();
+  });
+  $(document).on('click', '.penerimaedit', function() {
+    $('#id_pengajuan').val($(this).data('id'));
+    $('#pengirim').val($(this).data('pengirim'));
+    $('#penerima').val($(this).data('penerima'));
+     $("#modal-penerima").modal();
   });
   </script>
   <script>

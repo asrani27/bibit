@@ -30,4 +30,14 @@ class SerahTerimaController extends Controller
         Session::flash('success', 'Berhasil diupdate');
         return back();
     }
+    public function penerima(Request $req)
+    {
+        Pengajuan::find($req->id_pengajuan)->update([
+            'penerima' => $req->penerima,
+            'pengirim' => $req->pengirim,
+        ]);
+
+        Session::flash('success', 'Berhasil diupdate');
+        return back();
+    }
 }
