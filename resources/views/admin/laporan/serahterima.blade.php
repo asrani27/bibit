@@ -56,7 +56,7 @@
             <td>
               
               @foreach ($item->detail as $item2)
-                  <li>{{$item2->bibit->nama}}, jumlah : {{$item2->jumlah}}</li>
+                  <li>{{$item2->bibit == null ? "": $item2->bibit->nama}}, jumlah : {{$item2->jumlah}}</li>
               @endforeach
               @if ($item->status == null)
               <a href="#" class="btn btn-xs btn-success tambah-bibit" data-id="{{$item->id}}"><i class="fa fa-plus-circle"></i></a>
