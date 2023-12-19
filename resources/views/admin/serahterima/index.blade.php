@@ -29,6 +29,7 @@
                   <th>Validasi</th>
                   <th>Tanggal Diserahkan</th>
                   <th>Pengirim & Penerima</th>
+                  <th></th>
                   
                 </tr>
                 @foreach ($data as $key => $item)
@@ -76,6 +77,9 @@
                       <a href="#" class="btn btn-xs btn-success penerimaedit" data-pengirim="{{$item->pengirim}}"  data-penerima="{{$item->penerima}}" data-id="{{$item->id}}"><i class="fa fa-edit"></i></a>
                           
                       @endif
+                    </td>
+                    <td>
+                        <a href="/superadmin/serahterima/surat/{{$item->id}}" target="_blank" class="btn btn-success btn-xs">Print Surat</a>
                     </td>
                     
                     

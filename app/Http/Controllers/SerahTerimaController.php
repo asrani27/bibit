@@ -9,7 +9,12 @@ use Illuminate\Support\Facades\Session;
 
 class SerahTerimaController extends Controller
 {
+    public function surat($id)
+    {
+        $data = Pengajuan::find($id);
 
+        return view('admin.serahterima.serahterima', compact('data'));
+    }
     public function pemohon_index()
     {
         $data = Pengajuan::where('user_id', Auth::user()->id)->where('status', 2)->paginate(10);
